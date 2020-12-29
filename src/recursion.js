@@ -44,22 +44,23 @@ var arraySum = function(input) {
 
 // 4. Check if a number is even.
 var isEven = function(n) {
+  // return n === 0 ?:;
   if (n === 0){
     return true;
   } else if (n === 1){
     return false;
-  } else {
-    if (n < 0){
-      return isEven(n + 2);
-    }
-    return isEven(n - 2);
-  }
+  } return n < 0 ? isEven(n + 2) : isEven(n - 2);
 };
 
 // 5. Sum all integers below a given integer.
 // sumBelow(10); // 45
 // sumBelow(7); // 21
 var sumBelow = function(n) {
+  if (n > 0){
+  return n ? n - 1 + sumBelow(n - 1) : 0;
+  } else {
+    return n ? n + 1 + sumBelow(n + 1) : 0;
+  }
 };
 
 // 6. Get the integers within a range (x, y).
