@@ -85,7 +85,7 @@ var range = function(x, y) {
   } if (x < y) {
   return result.concat(x + 1, range(x + 1, y));
   } else {
-    console.log(result);
+
     return result.concat(x - 1, range(x -1, y));
   }
 };
@@ -114,6 +114,16 @@ var exponent = function(base, exp) {
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
+  if (n === 0) {
+    return false
+  } if (n === 1) {
+    return true;
+  } if (n % 2 === 1) {
+    return false;
+  } else {
+    console.log(n)
+    return powerOfTwo(n/2);
+  }
 };
 
 // 9. Write a function that reverses a string.
